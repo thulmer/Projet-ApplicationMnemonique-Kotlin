@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/connexion">
+    <fragment
+        android:id="@+id/connexion"
+        android:name="com.example.jeumemonique.presentation.flashCards.VueConnexion"
+        android:label="fragment_connexion"
+        tools:layout="@layout/fragment_connexion">
+        <action
+            android:id="@+id/action_connexion_to_inscription"
+            app:destination="@id/inscription" />
+        <action
+            android:id="@+id/action_connexion_to_menu"
+            app:destination="@id/menu" />
+    </fragment>
+    <fragment
+        android:id="@+id/inscription"
+        android:name="com.example.jeumemonique.presentation.inscription.VueInscription"
+        android:label="fragment_inscription"
+        tools:layout="@layout/fragment_inscription" >
+        <action
+            android:id="@+id/action_inscription_to_connexion"
+            app:destination="@id/connexion" />
+    </fragment>
+    <fragment
+        android:id="@+id/flashCards"
+        android:name="com.example.jeumemonique.presentation.flashCards.VueFlashCards"
+        android:label="fragment_flash_card"
+        tools:layout="@layout/fragment_flash_card" />
+    <fragment
+        android:id="@+id/selectionnerListe"
+        android:name="com.example.jeumemonique.presentation.selectionnerListe.VueSelectionnerListe"
+        android:label="fragment_selectionner_liste"
+        tools:layout="@layout/fragment_selectionner_liste" >
+        <action
+            android:id="@+id/action_selectionnerListe_to_flashCards"
+            app:destination="@id/flashCards" />
+        <action
+            android:id="@+id/action_selectionnerListe_to_voirListes"
+            app:destination="@id/voirListes" />
+        <action
+            android:id="@+id/action_selectionnerListe_to_menu"
+            app:destination="@id/menu" />
+        <action
+            android:id="@+id/action_selectionnerListe_to_trouverRéponse"
+            app:destination="@id/trouverRéponse" />
+    </fragment>
+    <fragment
+        android:id="@+id/voirGroupes"
+        android:name="com.example.jeumemonique.presentation.voirGroupes.VueVoirGroupes"
+        android:label="fragment_voir_groupes"
+        tools:layout="@layout/fragment_voir_groupes" >
+        <action
+            android:id="@+id/action_voirGroupes_to_voirGroupe"
+            app:destination="@id/voirGroupe" />
+        <action
+            android:id="@+id/action_voirGroupes_to_menu"
+            app:destination="@id/menu" />
+    </fragment>
+    <fragment
+        android:id="@+id/voirMembresGroupe"
+        android:name="com.example.jeumemonique.presentation.voirGroupes.VueVoirMembresGroupe"
+        android:label="fragment_voir_membres_groupe"
+        tools:layout="@layout/fragment_voir_membres_groupe" />
+    <fragment
+        android:id="@+id/menu"
+        android:name="com.example.jeumemonique.presentation.menu.VueMenu"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menu_to_selectionnerListe"
+            app:destination="@id/selectionnerListe" />
+        <action
+            android:id="@+id/action_menu_to_voirGroupes"
+            app:destination="@id/voirGroupes" />
+        <action
+            android:id="@+id/action_menu_to_voirListes"
+            app:destination="@id/voirListes" />
+        <action
+            android:id="@+id/action_menu_to_connexion"
+            app:destination="@id/connexion" />
+    </fragment>
+    <fragment
+        android:id="@+id/voirListes"
+        android:name="com.example.jeumemonique.presentation.voirListes.VueVoirListes"
+        android:label="fragment_voir_listes"
+        tools:layout="@layout/fragment_voir_listes" >
+        <action
+            android:id="@+id/action_voirListes_to_voirQuestionsListe"
+            app:destination="@id/voirQuestionsListe" />
+        <action
+            android:id="@+id/action_voirListes_to_menu"
+            app:destination="@id/menu" />
+    </fragment>
+    <fragment
+        android:id="@+id/voirQuestionsListe"
+        android:name="com.example.jeumemonique.presentation.voirQuestionsListe.VueVoirQuestionsListe"
+        android:label="fragment_voir_questions_liste"
+        tools:layout="@layout/fragment_voir_questions_liste" >
+        <action
+            android:id="@+id/action_voirQuestionsListe_to_voirListes"
+            app:destination="@id/voirListes" />
+    </fragment>
+    <fragment
+        android:id="@+id/voirListesPartagées"
+        android:name="com.example.jeumemonique.presentation.voirListesPartagées.VueVoirListesPartagées"
+        android:label="fragment_voir_listes_partagees"
+        tools:layout="@layout/fragment_voir_listes_partagees" />
+    <fragment
+        android:id="@+id/voirGroupe"
+        android:name="com.example.jeumemonique.presentation.voirGroupe.VueVoirGroupe"
+        android:label="VueVoirGroupe"
+        tools:layout="@layout/fragment_voir_groupe">
+        <action
+            android:id="@+id/action_voirGroupe_to_voirGroupes"
+            app:destination="@id/voirGroupes" />
+        <action
+            android:id="@+id/action_voirGroupe_to_selectionnerListes"
+            app:destination="@id/selectionnerListe" />
+    </fragment>
+    <fragment
+        android:id="@+id/trouverRéponse"
+        android:name="com.example.jeumemonique.presentation.trouverRéponse.VueTrouverRéponse"
+        android:label="fragment_trouver_réponse"
+        tools:layout="@layout/fragment_trouver_réponse" />
+</navigation>
